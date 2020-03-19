@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton", "AkkaSingleton\AkkaSingleton.fsproj", "{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7A340D2-B972-4386-AE7E-077F28B6DC43}
+	EndGlobalSection
+EndGlobal
