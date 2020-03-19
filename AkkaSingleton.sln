@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton", "AkkaSingleton\AkkaSingleton.fsproj", "{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaSingleton", "AkkaSingleton\AkkaSingleton.fsproj", "{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.Common", "AkkaSingleton.Common\AkkaSingleton.Common.fsproj", "{DB60F6F9-8A90-4F58-A048-33E555ECBD9E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.Witness", "AkkaSingleton.Witness\AkkaSingleton.Witness.fsproj", "{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB60F6F9-8A90-4F58-A048-33E555ECBD9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB60F6F9-8A90-4F58-A048-33E555ECBD9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB60F6F9-8A90-4F58-A048-33E555ECBD9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB60F6F9-8A90-4F58-A048-33E555ECBD9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿namespace AkkaSingleton 
+﻿namespace AkkaSingleton.Witness
 
 open System
 open Akka.Actor
@@ -12,7 +12,6 @@ open AkkaSingleton.Common
 open AkkaSingleton.Common.Util.AkkaExtensions
 
 module Program = 
-
 
     [<EntryPoint>]
     let main argv =
@@ -29,20 +28,10 @@ module Program =
 
                 { baseConfig with 
                                 MemberHostPort = baseConfig.SeedPorts.[index]
-                                MemberRoles = [SingletonHost] 
+                                MemberRoles = [] 
                             }
             
             ActorSystem.Create (config.ClusterName, config.ToAkkaConfig())
-
-
-        let singletonLauncher = SingletonActor.create Launcher.launch
-
-        let clusterSingleton = 
-            system.ActorOf(ClusterSingletonManager.Props(
-                            Props.CreateFromActorFn singletonLauncher,
-                            PoisonPill.Instance,
-                            ClusterSingletonManagerSettings.Create(system).WithRole(SingletonHost.ToString())),
-                            "consumer")
 
         printfn "Running"
         let _ = System.Console.ReadLine ()

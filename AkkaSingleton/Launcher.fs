@@ -1,6 +1,7 @@
 ﻿namespace AkkaSingleton  
 
 open System
+open AkkaSingleton.Common.Util
 
 [<RequireQualifiedAccess>]
 module Launcher =
