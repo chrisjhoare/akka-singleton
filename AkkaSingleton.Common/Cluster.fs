@@ -13,15 +13,25 @@ module Cluster =
     type ClusterConfig = {
         ClusterName: string
         SeedNodes: ResizeArray<string>
+        NodeIp: string
         NodePort: int
         IsHost: bool
-    } with static member Empty = { ClusterName = ""; SeedNodes = ResizeArray<_>(); NodePort = 0; IsHost = false }
+
+    } with static member Empty = { ClusterName = ""; NodeIp = ""; SeedNodes = ResizeArray<_>(); NodePort = 0; IsHost = false }
 
     let private createAkkaConfig (config:ClusterConfig) = 
         
+        let publichost = 
+            config.NodeIp
+            |> Option.ofObj
+            |> Option.bind (fun s -> if System.String.IsNullOrEmpty s then None else Some s)
+            |> Option.defaultWith (fun () -> System.Net.Dns.GetHostName())
+
+
         let seedNodes = 
             (config.SeedNodes
             |> Seq.map (sprintf "akka.tcp://%s@%s" config.ClusterName)
+            |> Seq.toList
             |> sprintf "%A").Replace(";", "\n")
                 
 
@@ -30,7 +40,7 @@ module Cluster =
                 if config.IsHost then yield SingletonHost
                 yield Witness
             }
-            |> Seq.map (sprintf "%A")
+            |> Seq.map (sprintf "%A" >> sprintf "%A")
             |> fun s -> System.String.Join(",", s)
             |> sprintf "[%s]"
 
@@ -41,7 +51,8 @@ module Cluster =
                 remote {
                     dot-netty.tcp {
                         port = %d
-                        hostname = localhost
+                        public-hostname = %s
+                        hostname = 0.0.0.0
                     }
                 }
                 cluster {
@@ -58,9 +69,11 @@ module Cluster =
                 }
             }
             """ <| config.NodePort 
+                <| publichost
                 <| seedNodes
                 <| memberRoles 
 
+        printfn "ClusterConfig: %s" configString
         Configuration.parse configString
 
 

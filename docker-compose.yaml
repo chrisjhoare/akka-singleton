@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+
+  witness:
+    build: 
+      context: "./AkkaSingleton.Witness"
+      dockerfile: "Dockerfile"
+
+    hostname: witness
+    ports:
+      - '5010:5010'
+    environment:
+      ClusterName: "Cluster"
+      NodePort: 5010
+      IsHost: "false"
+      SeedNodes:0: "witness:5010"
+      
+
+  hostone:
+    build: 
+      context: "./AkkaSingleton"
+      dockerfile: "Dockerfile"
+    ports:
+      - '0:5010'
+    environment:
+      ClusterName: "Cluster"
+      NodePort: 5010
+      IsHost: "true"
+      SeedNodes:0: "witness:5010"
+    restart: on-failure
+
+  hosttwo:
+    build: 
+      context: "./AkkaSingleton"
+      dockerfile: "Dockerfile"
+    ports:
+      - '0:5010'
+    environment:
+      ClusterName: "Cluster"
+      NodePort: 5010
+      IsHost: "true"
+      SeedNodes:0: "witness:5010"
+    restart: on-failure

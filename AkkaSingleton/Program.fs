@@ -39,7 +39,8 @@ module Program =
                             "consumer")
 
         printfn "Running"
-        let _ = System.Console.ReadLine ()
-
+        
+        system.WhenTerminated.Wait()
+           
         
         0

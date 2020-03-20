@@ -33,5 +33,8 @@ module Program =
         printfn "Running"
         let _ = System.Console.ReadLine ()
 
-        
+        system.WhenTerminated.Wait()
+           
+
+        printfn "Closing"
         0
