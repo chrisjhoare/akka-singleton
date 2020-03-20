@@ -10,29 +10,23 @@ open Akka.Cluster.Tools.Singleton
 open AkkaSingleton.Common.Cluster
 open AkkaSingleton.Common
 open AkkaSingleton.Common.Util.AkkaExtensions
+open Microsoft.Extensions.Configuration
 
 module Program = 
-
 
     [<EntryPoint>]
     let main argv =
     
-        printfn "running with args: %A" argv    
+        let configuration = 
+            let builder = ConfigurationBuilder().AddCommandLine(argv).AddEnvironmentVariables()
+            builder.Build()
 
         let system = 
 
-            let config =
-                let index = 
-                    match argv |> Array.toList with
-                    | [id] -> System.Int32.Parse id
-                    | _ -> 0
+            let clusterConfig = ClusterConfig.Empty
+            configuration.Bind (clusterConfig)
 
-                { baseConfig with 
-                                MemberHostPort = baseConfig.SeedPorts.[index]
-                                MemberRoles = [SingletonHost] 
-                            }
-            
-            ActorSystem.Create (config.ClusterName, config.ToAkkaConfig())
+            Cluster.createClusterActorSystem clusterConfig
 
 
         let singletonLauncher = SingletonActor.create Launcher.launch

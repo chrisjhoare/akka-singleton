@@ -1,5 +1,7 @@
 ﻿namespace AkkaSingleton.Common.Util
 
+open System
+
 
 module AkkaExtensions = 
 
