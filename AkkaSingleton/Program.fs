@@ -21,15 +21,19 @@ module Program =
             let builder = ConfigurationBuilder().AddCommandLine(argv).AddEnvironmentVariables()
             builder.Build()
 
+        
+        let clusterConfig = 
+            let x = ClusterConfig.Empty
+            configuration.Bind x
+            x
+
         let system = 
 
-            let clusterConfig = ClusterConfig.Empty
-            configuration.Bind (clusterConfig)
 
             Cluster.createClusterActorSystem clusterConfig
 
 
-        let singletonLauncher = SingletonActor.create Launcher.launch
+        let singletonLauncher = SingletonActor.create (Launcher.launch (clusterConfig.NodeIp, 8060))
 
         let clusterSingleton = 
             system.ActorOf(ClusterSingletonManager.Props(

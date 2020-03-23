@@ -4,10 +4,9 @@
       "commandName": "Project",
       "environmentVariables": {
         "IsHost": "true",
-        "SeedNodes:0": "localhost:2550",
+        "SeedNodes:0": "chris-tower:2550",
         "ClusterName": "cluster",
-        "SeedNodes:1": "localhost:2551",
-        "NodePort": "2551"
+        "NodePort": "2550"
       }
     }
   }

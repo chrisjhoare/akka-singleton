@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaSingleton", "AkkaSingleton\AkkaSingleton.fsproj", "{F1FEE3FE-D479-42B7-9367-39AA9B863C9D}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.Common", "AkkaSingleton.Common\AkkaSingleton.Common.fsproj", "{DB60F6F9-8A90-4F58-A048-33E555ECBD9E}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaSingleton.Common", "AkkaSingleton.Common\AkkaSingleton.Common.fsproj", "{DB60F6F9-8A90-4F58-A048-33E555ECBD9E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.Witness", "AkkaSingleton.Witness\AkkaSingleton.Witness.fsproj", "{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaSingleton.Witness", "AkkaSingleton.Witness\AkkaSingleton.Witness.fsproj", "{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.GrpcContract", "AkkaSingleton.GrpcContract\AkkaSingleton.GrpcContract.fsproj", "{13A31C6D-3933-41BA-BDAC-C5E978D9783E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.GrpcClient", "AkkaSingleton.GrpcClient\AkkaSingleton.GrpcClient.fsproj", "{420D5EEA-775E-4907-86C3-F0E549BE4E09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13A31C6D-3933-41BA-BDAC-C5E978D9783E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A31C6D-3933-41BA-BDAC-C5E978D9783E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A31C6D-3933-41BA-BDAC-C5E978D9783E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A31C6D-3933-41BA-BDAC-C5E978D9783E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{420D5EEA-775E-4907-86C3-F0E549BE4E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{420D5EEA-775E-4907-86C3-F0E549BE4E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{420D5EEA-775E-4907-86C3-F0E549BE4E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{420D5EEA-775E-4907-86C3-F0E549BE4E09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

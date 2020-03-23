@@ -11,6 +11,7 @@ module SingletonActor =
     
     let create (launch:unit -> IDisposable) (mailbox:Actor<PoisonPill>) =
 
+        printfn "Singleton launched"
         let disposable = launch ()
         mailbox.Defer (fun () -> disposable.Dispose())
     
