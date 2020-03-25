@@ -8,18 +8,13 @@ module Cluster =
 
     type ClusterRole = SingletonHost | Witness
 
-    [<CLIMutable>]
-    type TestConfig = { Port: int }
-
-    [<CLIMutable>]
     type ClusterConfig = {
         ClusterName: string
-        SeedNodes: ResizeArray<string>
+        SeedNodes: string list
         NodeIp: string
         NodePort: int
         IsHost: bool
-
-    } with static member Empty = { ClusterName = ""; NodeIp = ""; SeedNodes = ResizeArray<_>(); NodePort = 0; IsHost = false }
+    }
 
     let private createAkkaConfig (config:ClusterConfig) = 
         

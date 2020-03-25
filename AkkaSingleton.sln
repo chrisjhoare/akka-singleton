@@ -9,9 +9,11 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaSingleton.Common", "Akk
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaSingleton.Witness", "AkkaSingleton.Witness\AkkaSingleton.Witness.fsproj", "{6F45F0F9-B5CA-4E7A-BE71-E3AD7AD93B15}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.GrpcContract", "AkkaSingleton.GrpcContract\AkkaSingleton.GrpcContract.fsproj", "{13A31C6D-3933-41BA-BDAC-C5E978D9783E}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaSingleton.GrpcContract", "AkkaSingleton.GrpcContract\AkkaSingleton.GrpcContract.fsproj", "{13A31C6D-3933-41BA-BDAC-C5E978D9783E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.GrpcClient", "AkkaSingleton.GrpcClient\AkkaSingleton.GrpcClient.fsproj", "{420D5EEA-775E-4907-86C3-F0E549BE4E09}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaSingleton.GrpcClient", "AkkaSingleton.GrpcClient\AkkaSingleton.GrpcClient.fsproj", "{420D5EEA-775E-4907-86C3-F0E549BE4E09}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AkkaSingleton.Common.Tests", "AkkaSingleton.Common.Tests\AkkaSingleton.Common.Tests.fsproj", "{08BEAA25-5546-4AD6-A7F8-DB345E0D5B9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{420D5EEA-775E-4907-86C3-F0E549BE4E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{420D5EEA-775E-4907-86C3-F0E549BE4E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{420D5EEA-775E-4907-86C3-F0E549BE4E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08BEAA25-5546-4AD6-A7F8-DB345E0D5B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BEAA25-5546-4AD6-A7F8-DB345E0D5B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BEAA25-5546-4AD6-A7F8-DB345E0D5B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08BEAA25-5546-4AD6-A7F8-DB345E0D5B9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

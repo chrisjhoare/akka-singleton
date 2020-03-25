@@ -6,6 +6,7 @@
         "IsHost": "true",
         "SeedNodes:0": "chris-tower:2550",
         "ClusterName": "cluster",
+        "NodeIp": "localhost",
         "NodePort": "2550"
       }
     }

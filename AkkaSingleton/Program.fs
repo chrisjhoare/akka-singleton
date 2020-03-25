@@ -15,26 +15,20 @@ open Microsoft.Extensions.Configuration
 module Program = 
 
     open System.ComponentModel
-    open Util.ConfigurationExtensions
+    open Common.Configuration
 
     [<EntryPoint>]
     let main argv =
     
-        let v = testing()
-        
-
         let configuration = 
             let builder = ConfigurationBuilder().AddCommandLine(argv).AddEnvironmentVariables()
             builder.Build()
 
+        let clusterConfigBinder = ConfigBinder.mkConfig<ClusterConfig>
+
+        let clusterConfig = clusterConfigBinder configuration
         
-        let clusterConfig = configuration.Get<ClusterConfig>()
-
-        let test = configuration.Get<TestConfig>()
-
         let system = 
-
-
             Cluster.createClusterActorSystem clusterConfig
 
 

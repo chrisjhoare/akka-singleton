@@ -11,6 +11,7 @@ open AkkaSingleton.Common.Cluster
 open AkkaSingleton.Common
 open AkkaSingleton.Common.Util.AkkaExtensions
 open Microsoft.Extensions.Configuration
+open AkkaSingleton.Common.Configuration
 
 module Program = 
 
@@ -22,13 +23,13 @@ module Program =
             builder.Build()
             
 
+        let clusterConfigBinder = ConfigBinder.mkConfig<ClusterConfig>
+
+        let clusterConfig = clusterConfigBinder configuration
+
         let system = 
 
-            let clusterConfig = ClusterConfig.Empty
-            configuration.Bind (clusterConfig)
-
             Cluster.createClusterActorSystem clusterConfig
-
 
         printfn "Running"
         let _ = System.Console.ReadLine ()

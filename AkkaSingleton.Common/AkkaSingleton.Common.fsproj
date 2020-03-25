@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Configuration.fs" />
     <Compile Include="Util.fs" />
     <Compile Include="Cluster.fs" />
     <Compile Include="SingletonActor.fs" />
