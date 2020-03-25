@@ -47,7 +47,7 @@ let main argv =
 
     }
 
-    let cts = CancellationTokenSource()
+    let cts = new CancellationTokenSource()
     
     let _ = Async.Start(work (), cts.Token)
 

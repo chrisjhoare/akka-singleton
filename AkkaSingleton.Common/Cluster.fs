@@ -8,6 +8,8 @@ module Cluster =
 
     type ClusterRole = SingletonHost | Witness
 
+    [<CLIMutable>]
+    type TestConfig = { Port: int }
 
     [<CLIMutable>]
     type ClusterConfig = {

@@ -14,18 +14,23 @@ open Microsoft.Extensions.Configuration
 
 module Program = 
 
+    open System.ComponentModel
+    open Util.ConfigurationExtensions
+
     [<EntryPoint>]
     let main argv =
     
+        let v = testing()
+        
+
         let configuration = 
             let builder = ConfigurationBuilder().AddCommandLine(argv).AddEnvironmentVariables()
             builder.Build()
 
         
-        let clusterConfig = 
-            let x = ClusterConfig.Empty
-            configuration.Bind x
-            x
+        let clusterConfig = configuration.Get<ClusterConfig>()
+
+        let test = configuration.Get<TestConfig>()
 
         let system = 
 
